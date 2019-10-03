@@ -1,23 +1,71 @@
+:root {
+    /* Vi definerer de farver vi vil bruge som variabler, så vi hurtigt kan ændre farverne ét sted */
+    --main-grey: #28292C;
+    --secondary-grey: #373D46;
+    --neon-green: #33FF00;
+}
+
 body {
-    width: 8000px;
+    width: 4000px;
+    margin: 0;
 }
 
-.panel {
-    width: 930px;
-    float: left;
-    padding-left: 30px;
-    padding-right: 1040px;
-    margin-top: 45px;
-}
-
-
-ul#banner {
+header {
+    width: 100vw;
+    height: 70px;
     position: fixed;
-    line-height: 45px;
-    margin: 0 30px;
-    padding: 0;
+    background-color: var(--main-grey);
+    display: flex;
+    align-items: center;
 }
 
-ul#banner li {
-    display: inline;
+#logo {
+    height: 30px;
+    margin-left: 50px;
+}
+
+main {
+    display: flex;
+}
+
+section {
+    width: 1000px;
+    height: 100vh;
+    background-color: bisque;
+}
+
+section:nth-child(odd) {
+    background-color: #ff9f2d;
+}
+
+#pedal {
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    position: fixed;
+    bottom: 90px;
+    right: 50px;
+    cursor: pointer;
+}
+
+#reverse {
+    width: 50px;
+    height: 50px;
+    background-color: aquamarine;
+    position: fixed;
+    bottom: 90px;
+    right: 110px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+footer {
+    width: 100vw;
+    height: 70px;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--main-grey);
 }
