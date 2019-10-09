@@ -2,12 +2,15 @@ document.addEventListener("DOMContentLoaded", startEngine);
 
 const pedal = document.querySelector("#pedal");
 const reverseBtn = document.querySelector("#reverse");
-let speed = 5;
+let speed = 3;
+
+let gearStang = document.querySelector("#reverse");
 
 function startEngine() {
     console.log("startEngine");
 
-    document.querySelector("#reverse h3").textContent = "R";
+    gearStang.src = "img/drive.svg";
+
 
     pedal.removeEventListener("mousedown", mouseDownBack);
     pedal.removeEventListener("mouseup", mouseUpBack);
@@ -25,17 +28,20 @@ function mouseDownForward() {
         window.scrollBy(speed, 0); // May need to be -1 to go down
         behavior: 'smooth'
     }, 0); // Play around with this number. May go too fast
+
+    pedal.classList.add("press_pedal");
 }
 
 function mouseUpForward() {
     clearInterval(timeout);
+    pedal.classList.remove("press_pedal");
 }
 
 
 function reverseEngine() {
     console.log("reverseEngine");
 
-    document.querySelector("#reverse h3").textContent = "D";
+    gearStang.src = "img/reverse.svg";
 
     pedal.removeEventListener("mousedown", mouseDownForward);
     pedal.removeEventListener("mouseup", mouseUpForward);
@@ -53,10 +59,13 @@ function mouseDownBack() {
     timeout = setInterval(function () {
         window.scrollBy(-speed, 0); // May need to be -1 to go down
     }, 0); // Play around with this number. May go too fast
+
+    pedal.classList.add("press_pedal");
 }
 
 function mouseUpBack() {
     clearInterval(timeout);
+    pedal.classList.remove("press_pedal");
 }
 
 

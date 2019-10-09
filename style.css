@@ -14,8 +14,13 @@ html {
 }
 
 body {
-    width: 4000px;
     margin: 0;
+}
+
+h1 {
+    font-family: Safety;
+    font-weight: 100;
+    font-size: 4.2rem;
 }
 
 header {
@@ -24,6 +29,7 @@ header {
     position: fixed;
     background-color: var(--main-grey);
     display: flex;
+    z-index: 100;
 }
 
 #header_wrapper {
@@ -51,48 +57,80 @@ nav {
 
 main {
     display: flex;
+    width: 400vw;
+    overflow: hidden;
+    position: relative;
 }
 
 section {
-    width: 1000px;
+    position: relative;
+    width: 100vw;
     height: 100vh;
-    background-color: bisque;
+    background-color: #EAEAEA;
+}
+
+#road {
+    width: 8000px;
+    position: absolute;
+    bottom: 80px;
+    z-index: 100;
+}
+
+#main_car {
+    position: fixed;
+    bottom: 160px;
+    left: 200px;
+    z-index: 200;
+    width: 100px;
 }
 
 section:nth-child(odd) {
-    background-color: #ff9f2d;
+    background-color: #7b7b7b;
+}
+
+.main_content {
+    display: grid;
+    padding: 100px 30px;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+#video {
+    width: 100%;
+    max-width: 540px;
+}
+
+#sec_1 h1 {
+    margin-top: 0;
+}
+
+
+.fade_out {
+    opacity: 0;
 }
 
 #pedal {
-    width: 50px;
-    height: 50px;
-    background-color: blueviolet;
+    width: 35px;
     position: fixed;
-    bottom: 90px;
+    bottom: 10px;
     right: 50px;
     cursor: pointer;
 }
 
+.press_pedal {
+    transform: scale(0.9);
+}
+
 #reverse {
-    width: 50px;
-    height: 50px;
-    background-color: aquamarine;
+    width: 40px;
     position: fixed;
-    bottom: 90px;
-    right: 110px;
+    bottom: 10px;
+    right: 100px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-}
-
-footer {
-    width: 100vw;
-    height: 70px;
-    position: fixed;
-    bottom: 0;
-    background-color: var(--main-grey);
 }
 
 @media screen and (min-width: 1024px) {
@@ -117,7 +155,8 @@ footer {
         color: #ccc;
         text-decoration: none;
         text-transform: uppercase;
-        font-family: Helvetica;
+        font-family: Safety;
+        font-weight: 500;
         margin-right: 20px;
         font-size: 1.4rem;
     }
@@ -131,5 +170,14 @@ footer {
 
     #burger_menu {
         display: none;
+    }
+
+    .main_content {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    #video {
+        width: 100%;
+        max-width: 2000px;
     }
 }
