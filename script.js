@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", startEngine);
 
 const pedal = document.querySelector("#pedal");
 const reverseBtn = document.querySelector("#reverse");
-let speed = 3;
+let speed = 4;
 
 let gearStang = document.querySelector("#reverse");
 
@@ -26,7 +26,6 @@ function mouseDownForward() {
     console.log("driveForward");
     timeout = setInterval(function () {
         window.scrollBy(speed, 0); // May need to be -1 to go down
-        behavior: 'smooth'
     }, 0); // Play around with this number. May go too fast
 
     pedal.classList.add("press_pedal");
@@ -50,7 +49,6 @@ function reverseEngine() {
     pedal.addEventListener("mousedown", mouseDownBack);
     pedal.addEventListener("mouseup", mouseUpBack);
 
-
     reverseBtn.addEventListener("click", startEngine);
 }
 
@@ -67,11 +65,6 @@ function mouseUpBack() {
     clearInterval(timeout);
     pedal.classList.remove("press_pedal");
 }
-
-
-
-
-
 
 
 

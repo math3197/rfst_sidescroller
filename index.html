@@ -37,11 +37,46 @@
         <section id="sec_1">
             <article class="main_content">
                 <h1>Tænker du før du træder?</h1>
-                <img id="video" src="img/video.png" alt="video">
+                <div id="video_container">
+                    <video id="video">
+                        <source src="img/video_placeholder.mp4" type="video/mp4">
+                    </video>
+                    <img src="img/play_btn.svg" id="play_btn" alt="play button">
+                    <div id="small_btns">
+                        <img id="play_pause" src="img/pause.svg" alt="play/pause knap">
+                        <img id="fullscreen" src="img/fullscreen.svg" alt="fullscreen">
+                        <img id="rewind" src="img/rewind.svg" alt="rewind">
+                    </div>
+                </div>
             </article>
-
         </section>
         <section id="sec_2">
+            <article class="main_content" id="data_vis">
+                <div class="diagram_container">
+                    <svg class="diagram" viewbox=" 0 0 100 100">
+                        <circle class="diagram_1 stk_1" cx="50" cy="50" r="50" />
+                        <circle class="diagram_1 stk_2" cx="50" cy="50" r="50" />
+                    </svg>
+                    <h1>21%</h1>
+                    <p>21% af unge mænd mellem 17-24 år overholder i høj grad fartgrænsen.</p>
+                </div>
+                <div class="diagram_container">
+                    <svg class="diagram" viewbox=" 0 0 100 100">
+                        <circle class="diagram_2 stk_1" id="stk_3" cx="50" cy="50" r="50" />
+                        <circle class="diagram_2 stk_2" cx="50" cy="50" r="50" />
+                    </svg>
+                    <h1>42%</h1>
+                    <p>42% af unge mænd mellem 17-24 år overholder i nogen grad fartgrænsen.</p>
+                </div>
+                <div class="diagram_container">
+                    <svg class="diagram" viewbox=" 0 0 100 100">
+                        <circle class="diagram_3 stk_1" id="stk_4" cx="50" cy="50" r="50" />
+                        <circle class="diagram_3 stk_2" cx="50" cy="50" r="50" />
+                    </svg>
+                    <h1>38%</h1>
+                    <p>38% af unge mænd mellem 17-24 år overholder i lav grad fartgrænsen.</p>
+                </div>
+            </article>
 
         </section>
         <section id="sec_3">
@@ -56,4 +91,8 @@
     <img id="reverse" src="img/drive.svg" alt="gear stang">
 
     <script src="script.js"></script>
-</body></html>
+    <script src="diagram.js"></script>
+    <script src="video.js"></script>
+</body>
+
+</html>
