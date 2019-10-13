@@ -69,6 +69,9 @@ function mouseUpBack() {
 
 
 
+
+
+
 $(document).ready(function () {
     $("#banner a").bind("click", function (event) {
         event.preventDefault();

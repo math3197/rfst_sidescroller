@@ -50,9 +50,19 @@ body {
 }
 
 h1 {
-    font-family: Safety;
-    font-weight: 100;
+    font-family: 'Safety';
+    font-weight: 300;
+    font-style: normal;
     font-size: 4.2rem;
+}
+
+p {
+    font-size: 1.4rem;
+}
+
+em {
+    font-weight: bold;
+    font-style: normal;
 }
 
 header {
@@ -148,6 +158,10 @@ section:nth-child(odd) {
     background-color: #79BD5A;
     cursor: pointer;
     transition: 0.3s all;
+}
+
+#play_btn:hover {
+    transform: scale(0.95);
 }
 
 
@@ -246,13 +260,13 @@ section:nth-child(odd) {
 .stk_1 {
     stroke: #00ff14;
     stroke-dasharray: 1 314;
-    transition: 1s;
+    transition: 2s;
 }
 
 .stk_2 {
     stroke: #ffffff;
     stroke-dasharray: 1 314;
-    transition: 1s;
+    transition: 2s;
 }
 
 #stk_3 {
@@ -273,7 +287,7 @@ section:nth-child(odd) {
 .diagram_container h1 {
     grid-row: 1/2;
     grid-column: 1/2;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .diagram_container svg {
@@ -303,8 +317,9 @@ section:nth-child(odd) {
         color: #ccc;
         text-decoration: none;
         text-transform: uppercase;
-        font-family: Safety;
-        font-weight: 500;
+        font-family: 'Safety';
+        font-weight: 600;
+        font-style: normal;
         margin-right: 20px;
         font-size: 1.4rem;
     }
