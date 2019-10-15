@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tænk før du træder - Rådet for Sikker Trafik</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
 </head>
 
 
 <body>
     <header>
         <div id="header_wrapper">
-            <img src="img/logo.svg" alt="logo" id="logo">
+            <a href="index.html"><img src="img/logo.svg" alt="logo" id="logo"></a>
             <nav>
                 <a href="#">Kampagner</a>
                 <a href="#">Råd og viden</a>
                 <a href="#">Børn &amp; unge</a>
                 <a href="#">Samarbejde</a>
-                <a href="#">Video</a>
+                <a id="vp_link" href="video_portfolio.html">Video portfolio</a>
                 <a href="#">Presse</a>
                 <a href="#">Om os</a>
                 <svg id="search" viewBox="0 0 100 100">
@@ -35,62 +36,81 @@
     <main>
         <img id="main_car" src="img/main_car.svg" alt="blå bil">
         <section id="sec_1">
-            <article class="main_content">
-                <h1>Tænker du før du træder?</h1>
+            <article class="main_content" id="forside">
+                <div id="forside_txt">
+                    <h1>Tænker du før du træder?</h1>
+                    <p>Flere og flere unge kører for hurtigt på de danske veje, og de færreste ved, hvor stor en indflydelse fart har på udfaldet af en ulykke.</p>
+                    <p>Tænk før du træder. Nogle pedaler har større konsekvenser end andre.</p>
+                </div>
                 <div id="video_container">
-                    <video id="video">
-                        <source src="img/video_placeholder.mp4" type="video/mp4">
-                    </video>
-                    <img src="img/play_btn.svg" id="play_btn" alt="play button">
-                    <div id="small_btns">
-                        <img id="play_pause" src="img/pause.svg" alt="play/pause knap">
-                        <img id="fullscreen" src="img/fullscreen.svg" alt="fullscreen">
-                        <img id="rewind" src="img/rewind.svg" alt="rewind">
-                    </div>
+                    <iframe id="video" src="https://www.youtube.com/embed/3WkzPc38v6Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </article>
         </section>
         <section id="sec_2">
+            <article id="data_txt">
+                <h1>Du er ikke alene</h1>
+                <p>Det er ganske normalt blandt unge mænd at overskride fartgrænsen.</p>
+            </article>
             <article class="main_content" id="data_vis">
-                <div class="diagram_container">
+
+                <div class="diagram_container" id="dia_1">
                     <svg class="diagram" viewbox=" 0 0 100 100">
                         <circle class="diagram_1 stk_1" cx="50" cy="50" r="50" />
                         <circle class="diagram_1 stk_2" cx="50" cy="50" r="50" />
                     </svg>
                     <h1>21%</h1>
-                    <p>21% af unge mænd mellem 17-24 år overholder i <em>høj</em> grad fartgrænsen.</p>
+                    <p id="txt_1">21% overholder i <em>høj</em> <br>grad fartgrænsen</p>
                 </div>
-                <div class="diagram_container">
+                <div class="diagram_container" id="dia_2">
                     <svg class="diagram" viewbox=" 0 0 100 100">
                         <circle class="diagram_2 stk_1" id="stk_3" cx="50" cy="50" r="50" />
                         <circle class="diagram_2 stk_2" cx="50" cy="50" r="50" />
                     </svg>
                     <h1>42%</h1>
-                    <p>42% af unge mænd mellem 17-24 år overholder i <em>nogen</em> grad fartgrænsen.</p>
+                    <p id="txt_2">42% overholder i <em>nogen</em> <br>grad fartgrænsen</p>
                 </div>
-                <div class="diagram_container">
+                <div class="diagram_container" id="dia_3">
                     <svg class="diagram" viewbox=" 0 0 100 100">
                         <circle class="diagram_3 stk_1" id="stk_4" cx="50" cy="50" r="50" />
                         <circle class="diagram_3 stk_2" cx="50" cy="50" r="50" />
                     </svg>
                     <h1>38%</h1>
-                    <p>38% af unge mænd mellem 17-24 år overholder i <em>lav</em> grad fartgrænsen.</p>
+                    <p id="txt_3">38% overholder i <em>lav</em> <br>grad fartgrænsen</p>
                 </div>
             </article>
 
         </section>
         <section id="sec_3">
+            <article class="main_content" id="quotes">
+                <div id="txt_grid">
+                    <h2>Vi spurgte unge mænd mellem 17 og 24, hvorfor de kommer til at køre for hurtigt:</h2>
+                    <p><q>Det er bare en tendens, at følge med i trafikken, uden at holde øje med speedometeret</q> - Kristian, 22 år</p>
+                    <p><q>Man vænner sig til farten, og følger ligesom bare trafikken</q> - Tobias, 19 år</p>
+                    <p><q>Tror bare man glemmer at kikke på speedometeret. Og så lige pludselig kører man 10+</q> - Jakob, 24 år</p>
+                    <p>Del kampagnen med <em>#TænkFørDuTræder</em>, og tag medansvar i trafikken.</p>
+                    <div class="social_media">
+                        <a class="instagram" href="https://www.instagram.com/raadet_for_sikker_trafik/" target="_blank"></a>
+                        <a class="face" href="https://www.facebook.com/sikkertrafik/" target="_blank"></a>
+                    </div>
+                </div>
+                <img src="img/quotes_img.jpg" alt="landevej">
 
+            </article>
         </section>
-        <section id="sec_4">
 
-        </section>
         <img id="road" src="img/road_3.svg" alt="vejen">
+        <img src="img/pedal.svg" alt="pedal" id="pedal">
+        <img id="reverse" src="img/drive.svg" alt="gear stang">
+        <div id="press_here">
+            <h3>Tryk her!</h3>
+            <img id="arrow" src="img/arrow.svg" alt="pil">
+        </div>
     </main>
-    <img src="img/pedal.svg" alt="pedal" id="pedal">
-    <img id="reverse" src="img/drive.svg" alt="gear stang">
+
+
 
     <script src="script.js"></script>
     <script src="diagram.js"></script>
-    <script src="video.js"></script>
+    <script src="quotes.js"></script>
 </body></html>

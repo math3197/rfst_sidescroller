@@ -7,7 +7,7 @@ let speed = 4;
 let gearStang = document.querySelector("#reverse");
 
 function startEngine() {
-    console.log("startEngine");
+    console.log("startScript.js");
 
     gearStang.src = "img/drive.svg";
 
@@ -29,6 +29,7 @@ function mouseDownForward() {
     }, 0); // Play around with this number. May go too fast
 
     pedal.classList.add("press_pedal");
+    document.querySelector("#press_here").classList.add("fade_out");
 }
 
 function mouseUpForward() {
@@ -69,16 +70,9 @@ function mouseUpBack() {
 
 
 
-
-
-
-$(document).ready(function () {
-    $("#banner a").bind("click", function (event) {
-        event.preventDefault();
-        var target = $(this).attr("href");
-        $("html, body").stop().animate({
-            scrollLeft: $(target).offset().left,
-            scrollTop: $(target).offset().top
-        }, 1200);
-    });
+// We listen to the resize event
+window.addEventListener('resize', () => {
+    // We execute the same script as before
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
 });

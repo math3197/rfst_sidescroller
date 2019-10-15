@@ -33,7 +33,7 @@
 :root {
     /* Vi definerer de farver vi vil bruge som variabler, så vi hurtigt kan ændre farverne ét sted */
     --main-grey: #28292C;
-    --secondary-grey: #373D46;
+    --secondary-grey: #eaeaea;
     --neon-green: #33FF00;
 }
 
@@ -54,14 +54,16 @@ h1 {
     font-weight: 300;
     font-style: normal;
     font-size: 4.2rem;
+    margin-bottom: 10px;
 }
 
 p {
     font-size: 1.4rem;
+    font-family: 'Open Sans', sans-serif;
 }
 
 em {
-    font-weight: bold;
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -99,16 +101,17 @@ nav {
 
 main {
     display: flex;
-    width: 400vw;
-    overflow: hidden;
+    width: 300vw;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     position: relative;
+    overflow: hidden;
 }
 
 section {
     position: relative;
     width: 100vw;
-    height: 100vh;
-    background-color: #EAEAEA;
+    background-color: #fff;
 }
 
 #road {
@@ -121,31 +124,46 @@ section {
 #main_car {
     position: fixed;
     bottom: 160px;
-    left: 200px;
+    left: calc(50% - 50px);
     z-index: 200;
     width: 100px;
 }
 
 section:nth-child(odd) {
-    background-color: #7b7b7b;
+    background-color: var(--secondary-grey);
 }
 
 .main_content {
-    display: grid;
     padding: 100px 30px;
     max-width: 1024px;
     margin: 0 auto;
 }
 
-#video_container {
-    width: 100%;
-    max-width: 540px;
-    position: relative;
+#forside {
+    display: grid;
+    margin: 20px auto;
+}
 
+#forside p {
+    display: none;
+}
+
+#video_container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    padding-top: 25px;
+    height: 0;
 }
 
 #video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    max-width: 540px;
+    max-height: 300px;
 }
 
 #play_btn {
@@ -192,54 +210,32 @@ section:nth-child(odd) {
     transition: 0.3s all;
 }
 
-.btn_fade_out {
-    opacity: 0;
-}
-
-.btn_fade_in {
-    opacity: 1;
-}
-
 #sec_1 h1 {
     margin-top: 0;
 }
-
 
 .fade_out {
     opacity: 0;
 }
 
-#pedal {
-    width: 35px;
-    position: fixed;
-    bottom: 10px;
-    right: 50px;
-    cursor: pointer;
-}
-
-.press_pedal {
-    transform: scale(0.9);
-}
-
-#reverse {
-    width: 40px;
-    position: fixed;
-    bottom: 10px;
-    right: 100px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: sans-serif;
-}
 
 /* DIAGRAMMER */
 #data_vis {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    width: 90vw;
     grid-gap: 20px;
-    margin: 20px auto;
+    padding-top: 0;
+}
+
+#data_txt {
+    padding: 100px 30px 0 30px;
+    max-width: 1024px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#data_txt h1 {
+    margin: 0;
 }
 
 .diagram_container {
@@ -247,7 +243,41 @@ section:nth-child(odd) {
     font-family: sans-serif;
     background-size: cover;
     position: relative;
+}
 
+.diagram:hover {
+    stroke-width: 100;
+}
+
+.diagram:hover .stk_1 {
+    stroke: #317436;
+}
+
+.diagram:hover .stk_2 {
+    stroke: #747474;
+}
+
+.diagram:hover #stk_3 {
+    stroke: #918648;
+}
+
+.diagram:hover #stk_4 {
+    stroke: #864949;
+}
+
+#dia_1:hover #txt_1 {
+    pointer-events: none;
+    opacity: 1;
+}
+
+#dia_2:hover #txt_2 {
+    pointer-events: none;
+    opacity: 1;
+}
+
+#dia_3:hover #txt_3 {
+    pointer-events: none;
+    opacity: 1;
 }
 
 .diagram {
@@ -255,18 +285,20 @@ section:nth-child(odd) {
     stroke-width: 30;
     border-radius: 50%;
     transform: rotate(-90deg);
+    max-height: 255px;
+    max-width: 255px;
 }
 
 .stk_1 {
     stroke: #00ff14;
     stroke-dasharray: 1 314;
-    transition: 2s;
+    transition: 1s;
 }
 
 .stk_2 {
     stroke: #ffffff;
     stroke-dasharray: 1 314;
-    transition: 2s;
+    transition: 1s;
 }
 
 #stk_3 {
@@ -288,12 +320,220 @@ section:nth-child(odd) {
     grid-row: 1/2;
     grid-column: 1/2;
     font-size: 2.5rem;
+    margin: 5px;
 }
 
 .diagram_container svg {
     grid-row: 1/2;
     grid-column: 1/2;
 }
+
+.diagram_container p {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    z-index: 100;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transition: 1s all;
+    font-size: 1.1rem;
+}
+
+/* QUOTES */
+#quotes {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
+h2 {
+    font-family: 'Safety';
+    font-weight: 300;
+    font-style: normal;
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+#quotes h2 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin-bottom: 0;
+}
+
+#quotes img {
+    display: none;
+}
+
+#txt_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+}
+
+q {
+    font-size: 1.6rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+#quotes p {
+    font-size: 1.6rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    margin: 0;
+    margin-top: 20px;
+}
+
+#quotes p:nth-child(5) {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+#quotes p:nth-child(2) {
+    transition: 1s all;
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+#quotes p:nth-child(3) {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    opacity: 0;
+    transition: 1s all;
+}
+
+#quotes p:nth-child(4) {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    opacity: 0;
+    transition: 1s all;
+}
+
+#quotes em {
+    color: var(--neon-green);
+    text-decoration: none;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+/* SOCIALE MEDIER */
+.social_media {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.instagram {
+    margin: 0 5px;
+    background-image: url(social_media/instagram_1.svg);
+    background-size: 100%;
+    width: 45px;
+    height: 45px;
+    transition: 0.3s;
+}
+
+.instagram:hover {
+    background-image: url(social_media/instagram_2.svg);
+}
+
+.instagram:visited {
+    background-image: url(social_media/instagram_1.svg);
+}
+
+.face {
+    margin: 0 5px;
+    background-image: url(social_media/face_1.svg);
+    background-size: 100%;
+    width: 45px;
+    height: 45px;
+    transition: 0.3s;
+}
+
+.face:hover {
+    background-image: url(social_media/face_2.svg);
+}
+
+.face:visited {
+    background-image: url(social_media/face_1.svg);
+}
+
+.fade_in {
+    animation-name: fade_in_kf;
+    animation-duration: 4s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+
+@keyframes fade_in_kf {
+    0% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* FOOTER */
+#ui_elm {}
+
+#pedal {
+    width: 35px;
+    position: fixed;
+    bottom: 10px;
+    right: 100px;
+    cursor: pointer;
+}
+
+.press_pedal {
+    transform: scale(0.9);
+}
+
+#reverse {
+    width: 40px;
+    position: fixed;
+    bottom: 10px;
+    right: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+#press_here {
+    position: fixed;
+    bottom: 15px;
+    right: 160px;
+    transition: .5s all;
+    pointer-events: none;
+}
+
+h3 {
+    font-family: 'Safety';
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2rem;
+    color: #373D46;
+    margin: 0;
+    text-align: center;
+}
+
+#arrow {
+    width: 70px;
+    margin-left: 5px;
+}
+
+@media screen and (min-width: 650px) {
+    .diagram_container p {
+        font-size: 1.4rem;
+    }
+}
+
+
 
 @media screen and (min-width: 1024px) {
     #header_wrapper {
@@ -318,10 +558,22 @@ section:nth-child(odd) {
         text-decoration: none;
         text-transform: uppercase;
         font-family: 'Safety';
-        font-weight: 600;
         font-style: normal;
         margin-right: 20px;
         font-size: 1.4rem;
+    }
+
+    #vp_link {
+        font-weight: 600;
+    }
+
+    #vp_link:hover {
+        color: var(--neon-green);
+    }
+
+    .selected {
+        color: var(--neon-green);
+        font-weight: 600;
     }
 
     #search {
@@ -335,12 +587,44 @@ section:nth-child(odd) {
         display: none;
     }
 
+    #forside {
+        grid-gap: 20px;
+    }
+
+    #forside p {
+        display: block;
+    }
+
     .main_content {
         grid-template-columns: 1fr 2fr;
     }
 
-    #video_container {
+    #video {
+        max-width: 1000px;
+        max-height: 370px;
+    }
+
+    #quotes {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #quotes h2 {
+        margin-bottom: 0px;
+    }
+
+    #quotes img {
         width: 100%;
-        max-width: 2000px;
+        max-height: 2000px;
+        display: block;
+        margin-top: 24.9px;
+    }
+
+
+    footer {
+        width: 1024px;
+    }
+
+    .diagram_container p {
+        font-size: 1.6rem;
     }
 }

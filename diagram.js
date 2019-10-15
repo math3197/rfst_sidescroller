@@ -13,9 +13,10 @@ valuesOne.forEach(v => totalOne += v);
 faktorOne = omkreds / totalOne;
 
 function start() {
-    console.log("DOM loaded");
+    console.log("startDiagram.js");
     let diagramView = document.querySelector(".diagram_1");
-    let diagramView2 = document.querySelector(".diagram_3");
+    let diagramView2 = document.querySelector(".diagram_2");
+    let diagramView3 = document.querySelector(".diagram_3");
 
     //STJÅLET FRA https://gomakethings.com/how-to-test-if-an-element-is-in-the-viewport-with-vanilla-javascript/
     let isInViewport = function (elem) {
@@ -36,7 +37,7 @@ function start() {
         }
     }, false);
     window.addEventListener('scroll', function (event) {
-        if (isInViewport(diagramView2)) {
+        if (isInViewport(diagramView3)) {
             drawDiagramOne();
             drawDiagramTwo();
             drawDiagramThree();
@@ -88,4 +89,8 @@ function drawDiagramThree() {
         cirkel.style.strokeDasharray = valuesThree[i] * faktorThree + " " + omkreds;
         cirkel.style.strokeDashoffset = -offsetThree[i] * faktorThree;
     })
+}
+
+function showText() {
+
 }
